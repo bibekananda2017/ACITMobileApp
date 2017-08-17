@@ -1,0 +1,30 @@
+<!-- <ion-header-bar align-title="left" class="bar-blue">
+            <button class="button button-icon" ng-click="toggleProjects()">
+                <i class="icon ion-navicon"></i>
+            </button>
+           <h1 class="titleHeader">Announcements</h1> 
+ </ion-header-bar> --> 
+<div class="bar bar-header bar-blue" align-title="left">
+	<button class="button button-icon" ng-click="toggleProjects()">
+		<i class="icon ion-navicon"></i>
+	</button>
+     <h1 class="titleHeader">Announcements</h1>
+</div>
+<ion-view title="'ACIT Announcements'">
+  
+    <ion-content class="page-overflow list-content-block has-header">
+    	<div class="list-container">
+        <div class="list">
+            <a class="item"  ng-repeat="announcement in announcements" href="#/acit/menu/activities/{{announcement.id}}">
+                <p class="item-p">{{announcement.activity}}</p>
+                <p class="little-text">{{announcement.date | date:'mediumDate'}}</p>
+            </a> 
+        </div>
+    	<div ng-show = "errorMsg != ''" class="text-center errorExp">
+ 			<div><img ng-src={{"./images/error.png"}} class="errorImg" /></div>
+      		<div>{{errorMsg}}</div>
+      	</div>
+    	</div>
+    </ion-content>
+
+</ion-view>

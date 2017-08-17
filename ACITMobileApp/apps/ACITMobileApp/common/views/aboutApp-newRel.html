@@ -1,0 +1,21 @@
+<ion-modal-view class="outer-modal-style">
+<div class="bar bar-header bar-white" align-title="left">
+     <div class="row">
+            <div class="col col-75 mble-view"><p class="modalTitle">What's New in this Latest Version 2.1.1</p></div><div class = "col col-25 text-right mble-view"><img ng-src={{"./images/mobile_close.png"}} ng-click="modal3.hide()" /></div>
+            <div class="col col-75 tblt-view"><p class="modalTitle">What's New in this Latest Version 2.1.1</p></div><div class = "col col-25 text-right tblt-view"><img ng-src={{"./images/ipad_close.png"}} ng-click="modal3.hide()" /></div>
+      </div>
+</div>
+    <ion-content class="inner-modal-style" style="height: {{overlayHeight}};  z-index: -1;">
+        <div class="page-container">
+             <div class="listStory modal-headpadding">
+             <div class="modal-fonts">
+                    <ul>
+                    	<li>Message Board implemented and deployed as a minimal viable feature within a week, for use by a target set of users. This feature provides a message board for group collaboration amongst users of this version of the app.</li>
+                    	<li>'About this app'- gives a background and story of the development of this APP, an overview of the platform, tech stack and Key features of the app.</li>
+                    	<li>Personalized content notification (Push Service) - As part of personalized content notification, we are using Bluemix-Push Service subscription approach. Where the user subscribes to certain tags (categories) depending on their interest. While broadcasting a message the administrator chooses the tag (category) which the message belongs and Bluemix-Push Service sends the message based on subscription of the tag.</li>
+                    </ul>
+             </div>
+             </div>
+           </div>
+    </ion-content>
+</ion-modal-view>

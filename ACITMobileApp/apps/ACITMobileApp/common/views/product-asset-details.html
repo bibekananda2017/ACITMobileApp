@@ -1,0 +1,37 @@
+<!-- <ion-header-bar align-title="left" class="bar-blue">
+	<button class="button button-icon" ng-click="goBack()">
+		<i class="icon ion-chevron-left"></i>
+	</button>
+	<h1 class="titleHeader">Asset Details</h1> 
+</ion-header-bar> -->
+<div class="bar bar-header bar-blue" align-title="left">
+    <button class="button button-icon" ng-click="goBack()">
+    	<i class="icon ion-chevron-left"></i>   
+    </button>
+    <h1 class="titleHeader">Asset Details</h1>
+</div>
+<ion-view>
+    <ion-content class="page-overflow has-header">
+        <div class="page-container">
+	        <div ng-show = "errorMsg != ''" class="text-center errorExp">
+	 			<div><img ng-src={{"./images/error.png"}} class="errorImg" /></div>
+	      		<div>{{errorMsg}}</div>
+	      	</div>
+            <h3 class="section-head">{{name}}</h3>
+         	<br class="clr" />
+            <section class="clr asset-section">
+                 <div id="normal">
+                 	<p>{{details}}</p>
+                 </div>
+            </section>
+            <br class="clr" />
+            
+              <div  ng-if="(sbFlg=='T')" class="row">
+					<button ng-click="downLink()"> <span class="ion-archive col-75 col-25" style="color: #56789B">
+             	  	&nbsp;&nbsp;</span>View Solution Brief</button>
+                  
+              </div>
+            <br class="clr" />
+        </div>
+    </ion-content>
+</ion-view>

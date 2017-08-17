@@ -1,0 +1,26 @@
+<div class="bar bar-header bar-blue" align-title="left">
+	<button class="button button-icon" ng-click="toggleProjects()">
+		<i class="icon ion-navicon"></i>
+	</button>
+     <h1 class="titleHeader">Subscription</h1>
+     
+</div>
+<div  ng-show = "errorMsg == ''" class="bar bar-subheader subs-subHeader" style="padding: 0;">
+  <h1 class="subHeaderText">Note: Subscription shall enable you to receive relevant push notifications with information about new assets, updates, events, and trainings for selected categories.</h1>
+</div> 
+		
+<ion-view> 
+		    
+
+    <ion-content class="suscription-page-overflow has-header">
+ 		 <div ng-show = "errorMsg != ''" class="text-center errorExp">
+ 			<div><img ng-src={{"./images/error.png"}} class="errorImg" /></div>
+      		<div>{{errorMsg}}</div>
+      	</div>
+        <div class="list-sub1 suscription-page-container">        
+        
+        <ion-toggle ng-repeat="item in Subscription" ng-model="item.checked" ng-change="changeHandler(item.text,item.checked)" ng-checked="item.checked">{{ item.text }}</ion-toggle> 
+		
+        </div>
+    </ion-content>
+</ion-view>

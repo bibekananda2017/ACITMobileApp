@@ -1,0 +1,68 @@
+
+<div class="bar bar-header bar-blue" align-title="left">
+	<button class="button button-icon" ng-click="toggleProjects()">
+		<i class="icon ion-navicon"></i>
+	</button>
+     <h1 class="titleHeader">Assets</h1>
+     
+</div>
+<div class="bar bar-subheader product-search" style="padding: 0; height: 32px;">
+             <div class = "row" ng-show = "errorMsg == ''">
+          <div class = "col col-90">
+            <button style = "width: 100%;" ng-click="modal.show()" ng-model="productItem">Select Product</button>
+          </div>
+          <div class = "col">
+             <button style = "width:100%;" ng-click="assetSearchProcess()"><i class="icon ion-search"></i></button>
+          </div>
+        </div>
+        <!-- 
+            <div class="button-bar">
+		       <a class="button">A</a>
+		       <a class="button">B</a>
+		   </div> -->
+</div>
+<!-- <ion-content class="page-overflow has-header has-subheader" scroll="false">
+		<div class = "row">
+          <div class = "col-90">
+            
+          </div>
+          <div class = "col-10">
+          <div class="product-search-button">
+            <button class="button icon ion-android-search button-assetSearch" ng-click="assetSearchProcess()"></button>
+            </div>
+          </div>
+        </div>
+</ion-content>-->
+
+
+<ion-view>        
+
+
+    
+    
+
+    <ion-content class="product-assets page-overflow has-header has-subheader">
+ 		<div ng-show = "errorMsg != ''" class="text-center errorExp">
+ 			<div><img ng-src={{"./images/error.png"}} class="errorImg" /></div>
+      		<div>{{errorMsg}}</div>
+      	</div>
+        <div class="list-container mg-btm25" ng-show = "errorMsg == ''">
+            <h3 class="section-head">Recent Assets</h3>
+            <section class="asset-section">
+<!--                 <p class="header4">Accenture Foundation Platform for IBM</p> -->
+                <a ui-sref="acit-menu.asset-details({id: asset.id })" ng-repeat="asset in recentAssets | orderBy:'Release_Date'|limitTo:4" class="home-box bg-color-blue">
+                    <p class="sek-dot1">{{asset.Asset_Name}}</p>
+                 </a>
+                 
+            </section>
+            <br class="clr" />
+            <section class="clr asset-section">
+                <p class="header4 section-head">Solution Briefs</p>
+                <a ui-sref="acit-menu.asset-details({id: asset.id})" ng-repeat="asset in solutionBriefs | filter:{Solution_Brief:'T'}" class="home-box bg-color-blue">
+                    <p class="sek-dot1">{{asset.Asset_Name}}</p>
+                </a>
+            </section>
+            <br class="clr" />
+        </div>
+    </ion-content>
+</ion-view>

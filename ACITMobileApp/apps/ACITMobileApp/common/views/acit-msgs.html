@@ -1,0 +1,39 @@
+<div class="bar bar-header bar-blue">
+	<button class="button button-icon" ng-click="toggleProjects()">
+		<i class="icon ion-navicon"></i>
+	</button>
+     <h1 class="titleHeader">ACIT Message Board</h1>
+     <button class="button button-icon">
+		<i class="icon ion-chatbubbles"></i>
+	</button>
+</div>   
+<ion-view>
+	<ion-content class="padding page-overflow has-header" scroll = "true">
+	
+	<div class = "msg-page-c">
+	
+		        <div class="mes-box-display" ng-init="getMsg()">
+        <ul class="messages-list">
+            <li ng-repeat="x in chatMessages | orderBy: 'ts'">
+                <div class="chat-body-head">
+                <span class="uname-chat">{{ x.username }}</span>
+                <span class="doChat little-text">{{x.ts * 1000  | date:'hh:mm a, MMM dd, yyyy'}}</span>
+                </div>
+                <p class="item-p" style="margin-bottom: 5px;">{{ x.text }}</p>
+                
+            </li>
+        </ul>
+        </div>
+     </div>
+
+    </ion-content>
+</ion-view>
+<ion-footer-bar align-title="left" class="second-footer">
+          	<div class="send-msgs">
+            <form ng-submit="mesgsubmit()">
+		<input type="text" class="text-box" ng-model="msgs"><input type="submit" value="" class="send-msg">
+		</form>
+		</div>
+</ion-footer-bar>
+
+ 

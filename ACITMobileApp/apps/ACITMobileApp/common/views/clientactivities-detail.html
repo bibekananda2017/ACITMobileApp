@@ -1,0 +1,43 @@
+<!-- <ion-header-bar align-title="left" class="bar-blue">
+            <button class="button button-icon" ng-click="goBack()">
+                <i class="icon ion-chevron-left"></i>
+            </button>
+           <h1 class="titleHeader">Client Activity Detail</h1> 
+ </ion-header-bar>  -->
+ <div class="bar bar-header bar-blue" align-title="left">
+     <button class="button button-icon" ng-click="goBack()">
+    	<i class="icon ion-chevron-left"></i>   
+    </button>
+    <h1 class="titleHeader">Client Activity Detail</h1>
+</div>
+<ion-view> 
+<ion-content class="page-overflow has-header">
+		
+<div class="page-container">
+<h3 class="section-head">{{client}}</h3>
+	<ul class="con_des">
+			<li><i class="icon ion-document-text "></i><span>{{project}}</span></li>
+			<li><i class="icon ion-wrench"></i><span>{{requestType}}</span></li>
+			<li><i class="icon ion-android-contact"></i><span>{{contactName}}</span></li>
+			<li><i class="icon ion-android-settings"></i><span>{{product}}</span></li>
+			<li><i class="icon ion-android-calendar"></i><span>{{dateLastContacted | date:'MM/dd/yyyy'}}</span></li>
+		</ul>	
+		
+				
+    <div class="asset-container">
+            <h3 class="section-head"></h3>
+            
+            <section class="clr asset-section con8">
+                <div id="normal" ng-bind-html="details"/>
+                 
+            </section>
+            
+     </div>
+     <div ng-show = "errorMsg != ''" class="text-center errorExp">
+ 			<div><img ng-src={{"./images/error.png"}} class="errorImg" /></div>
+      		<div>{{errorMsg}}</div>
+     </div>
+
+</div><br class="clr" />
+</ion-content>
+</ion-view>

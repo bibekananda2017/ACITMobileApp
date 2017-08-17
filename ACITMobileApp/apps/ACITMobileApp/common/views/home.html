@@ -1,0 +1,112 @@
+<div class="bar bar-header bar-blue" align-title="left">
+	<button class="button button-icon icon ion-navicon" ng-click="toggleProjects()">
+	</button>
+     <h1 class="titleHeader">Smarter Selling. Smarter Delivery.</h1>
+</div>
+
+<ion-view>
+    <ion-content class="home-page-overflow has-header">
+    <div ng-show = "errorMsg != ''" class="text-center errorExp">
+ 			<div><img ng-src={{"./images/error.png"}} class="errorImg" /></div>
+      		<div>{{errorMsg}}</div>
+      	</div>
+    <div class="page-container">
+        <section class="recent-asst" ng-show = "errorMsg == ''">
+            <div class="row">
+                <h3 class="col-50 section-head">Upcoming Events</h3>
+                <input type="hidden" id="hiddenInput"/>
+                <span class="col text-right"> <a href="#/acit/menu/events" class="view-by-prod" style="text-decoration: none;">VIEW ALL &gt &nbsp;</a> 
+		</span>
+            </div>
+            <!-- <div style="width: 99%">
+                <ion-slide-box  show-pager="true">
+                    <ion-slide class="col" ng-repeat="event in events" ng-init="updateSlider()"> 
+	                    <a ui-sref="acit-menu.events-detail({id:event.odd.id})" class="home-box home-event">
+	                    	<p class="ion-calendar little-text">&nbsp;{{event.odd.date | date: 'dd'}} {{event.odd.date | date: 'MMM'}}, {{event.odd.date | date: 'yyyy'}}</p>
+	                    	<p class="sek-dot">{{event.odd.event}} </p>
+	                    </a>
+	                      <a ng-if="!(event.even==undefined)" ui-sref="acit-menu.events-detail({id:event.even.id})" class="home-box home-event bg-color-orge">
+	                      	<p class="ion-calendar little-text">&nbsp;{{event.even.date | date: 'dd'}} {{event.even.date | date: 'MMM'}}, {{event.even.date | date: 'yyyy'}}</p>
+	                    	<p class="sek-dot">{{event.even.event}} </p>
+	                    </a>
+                    </ion-slide>
+                </ion-slide-box>
+            </div> -->
+            
+             <div style="width: 99%">
+                <ion-slide-box  show-pager="true">
+                    <ion-slide class="col" ng-repeat="event in events" ng-init="updateSlider()"> 
+                    
+                        <a ui-sref="acit-menu.events-detail({id:event.id})" ng-if="$even" class="home-box home-event">
+	                    	<p class="ion-calendar little-text">&nbsp;{{event.date | date: 'dd'}} {{event.date | date: 'MMM'}}, {{event.date | date: 'yyyy'}}</p>
+	                    	<p class="sek-dot">{{event.event}} </p>
+	                    </a>
+	                      <a ng-if="$odd" ui-sref="acit-menu.events-detail({id:event.id})" class="home-box home-event bg-color-orge">
+	                      	<p class="ion-calendar little-text">&nbsp;{{event.date | date: 'dd'}} {{event.date | date: 'MMM'}}, {{event.date | date: 'yyyy'}}</p>
+	                    	<p class="sek-dot">{{event.event}} </p>
+	                    </a>
+	                     <!-- <a ui-sref="acit-menu.events-detail({id:event.id})" class="home-box home-event">
+	                    	<p class="ion-calendar little-text">&nbsp;{{event.date | date: 'dd'}} {{event.date | date: 'MMM'}}, {{event.date | date: 'yyyy'}}</p>
+	                    	<p class="sek-dot">{{event.event}} </p>
+	                    </a>
+	                      <a ng-if="!(event.even==undefined)" ui-sref="acit-menu.events-detail({id:event.id})" class="home-box home-event bg-color-orge">
+	                      	<p class="ion-calendar little-text">&nbsp;{{event.date | date: 'dd'}} {{event.date | date: 'MMM'}}, {{event.date | date: 'yyyy'}}</p>
+	                    	<p class="sek-dot">{{event.event}} </p>
+	                    </a> -->
+                    </ion-slide>
+                </ion-slide-box>
+            </div>
+        </section>
+        <hr ng-show = "errorMsg == ''" class="hr-align" style="border-top:1px"/>
+        <section class="recent-asst" ng-show = "errorMsg == ''">
+            <div class="row">
+                <h3 class="col-50 section-head">Recent Assets</h3>
+                <span class="col text-right"> <a href="#/acit/menu/assets" class="view-by-prod" style="text-decoration: none;">VIEW ALL &gt &nbsp;</a> 
+		</span>
+            </div>
+            <!-- <div style="width: 99%">
+                <ion-slide-box  show-pager="true">
+                   <ion-slide class="col" ng-repeat="at in assets" ng-init="updateSlider()"> 
+                    <a ui-sref="acit-menu.asset-details({id: at.odd._id })" class="home-box bg-color-orge"><p class="sek-dot1">{{at.odd.Asset_Name | limitTo: 55 }}<span ng-if="at.odd.Asset_Name.length > '55'">...</span></p></a>                    	
+                    <a ng-if="!(at.even==undefined)" ui-sref="acit-menu.asset-details({id: at.even._id })" class="home-box"><p class="sek-dot1">{{at.even.Asset_Name | limitTo: 55 }}<span ng-if="at.even.Asset_Name.length > '55'">...</span></p></a>
+                    </ion-slide>
+                </ion-slide-box>
+            </div> -->
+            <div style="width: 99%">
+                <ion-slide-box  show-pager="true">
+                   <ion-slide class="col" ng-repeat="at in assets" ng-init="updateSlider()"> 
+                     <a ui-sref="acit-menu.asset-details({id: at.id })" ng-if="$even" class="home-box bg-color-orge"><p class="sek-dot1">{{at.Asset_Name | limitTo: 55 }}<span ng-if="at.Asset_Name.length > '55'">...</span></p></a>                    	
+                    <a ng-if="$odd" ui-sref="acit-menu.asset-details({id: at.id })" class="home-box"><p class="sek-dot1">{{at.Asset_Name | limitTo: 55 }}<span ng-if="at.Asset_Name.length > '55'">...</span></p></a>
+                  </ion-slide>
+                </ion-slide-box>
+            </div>
+        </section>
+        </div>
+        <section class="contact-holder" ng-show = "errorMsg == ''">
+            <div class="row">
+                <h3 class="col-75 section-head">Testimonial</h3>
+            </div>
+            <div class="adju-slide margin-top5">
+                <ion-slide-box show-pager="true">
+                    <ion-slide ng-repeat="items in highlights" ng-init="updateSlider()">
+                    <div class="row">
+                        <div class="col-25" style="margin-right: 2%;">
+                            <img ng-src="{{items.image}}" style="border:solid 1px;padding:1px;" width="100%" />
+                        </div>
+                        <div class="col">
+                            <p class="sek-dot1">{{items.heading}} </p>
+                        </div>
+                    </div>
+                    
+                    <div class="row responsive-sm mg-bottom"  style="margin-top: 2%;">
+                        <div class="col">
+                            <h3 class="slider-head">{{items.client}}</h3>
+                            <p class="sek-dot2">{{items.details}}<a href class="view-by-prod readlinkColor" ng-click="aPass(items)" style="text-decoration: underline;">Read More</a></p>
+                        </div>
+                    </div>
+                     </ion-slide>
+                </ion-slide-box>
+            </div>
+            </section>
+        <ion-content>
+</ion-view>

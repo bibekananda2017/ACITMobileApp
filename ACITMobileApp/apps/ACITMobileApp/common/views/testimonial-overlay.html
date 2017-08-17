@@ -1,0 +1,26 @@
+<ion-modal-view class="outer-modal-style">
+    <ion-content class="inner-modal-style" style="height: {{overlayHeight}};  z-index: -1;">
+        <div>
+            <div class="row">
+               <!-- <a href ng-click="modal.hide()" class="ion-close-circled col col-20 col-offset-80 overlay-close"></a>-->
+                <a href class="col col-20 col-offset-80 overlay-close"><img ng-src={{"./images/mobile_close.png"}} ng-click="modal.hide()" /></a>
+                <a href class="col col-20 col-offset-80 overlay-close"><img ng-src={{"./images/ipad_close.png"}} ng-click="modal.hide()" /></a>
+            </div>
+            <div class="row margin-top5 ">
+                <div class="" style="padding-right:4%">
+                    <img ng-src="{{selectedItem.image}}" width="100%" />
+                <!-- </div>
+                <div class=""> -->
+                    <p>{{selectedItem.heading}}</p>
+                </div>
+            </div>
+
+            <div class="row responsive-sm margin-top5">
+                <div class="col">
+                    <h3 class="slider-head">{{selectedItem.client}}</h3>
+                    <p>{{selectedItem.details}}</p>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>

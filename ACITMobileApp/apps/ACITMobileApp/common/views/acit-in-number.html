@@ -1,0 +1,63 @@
+<div class="bar bar-header bar-blue">
+	<button class="button button-icon ion-chevron-left" ng-click="goBack()">
+	</button>
+     <h1 class="titleHeader">ACIT in Numbers </h1>
+     <!-- <button class="button button-icon" ng-click="gotoHome()">
+		<i class="icon ion-navicon"></i>
+	</button>-->
+</div>   
+<ion-view>        
+
+    <ion-content class="home-page-overflow has-header">
+    <div ng-repeat="object in jsonobject">
+	<div class="padding">
+	<p class="sek-dot3">{{object.test6}}<p>
+	<section class="asset-section">
+                     <div class="home-box bg-color-blue sek-dot3 studio-boxes" style="margin-right: 4% !important">
+                    <p style="padding-bottom: 9px;">1,200+</p>
+                    <p>{{object.test7}}</p>
+                    </div>
+                    <div class="home-box bg-color-blue sek-dot3 studio-boxes" style="margin-right: 0% !important">
+                    <p style="padding-bottom: 9px;">3,000+</p>
+                    <p>{{object.test8}}</p>
+                    </div>
+      </section>
+      <section class="asset-section">
+                     <div class="home-box bg-color-blue sek-dot3 studio-boxes" style="margin-right: 4% !important">
+                    <p style="padding-bottom: 9px;">40,000+</p>
+                    <p>{{object.test9}}</p>
+                    </div>
+                    <div class="home-box bg-color-blue sek-dot3 studio-boxes" style="margin-right: 0% !important">
+                    <p style="padding-bottom: 9px;">11,600+</p>
+                    <p>{{object.test10}}</p>
+                    </div>
+      </section>
+      <section class="asset-section">
+                     <div class="home-box bg-color-blue sek-dot3 studio-boxes" style="margin-right: 4% !important">
+                    <p style="padding-bottom: 9px;">4,000+</p>
+                    <p>{{object.test11}}</p>
+                    </div>
+                    <div class="home-box bg-color-blue sek-dot3 studio-boxes" style="margin-right: 0% !important">
+                    <p style="padding-bottom: 9px;">35,000+</p>
+                    <p>{{object.test12}}</p>
+                    </div>
+      </section>
+      </div>
+    	   <br class="clr" />
+      	       <section class="asset-section">
+                     <div class="home-box bg-color-blue sek-dot3" style="width: 100%;height: 245px !important;">
+                    <p style="padding-bottom: 13px;">11</p>
+                    <p style="padding-bottom: 9px;">ACIT global hubs & satellites:</p>
+                  	<ul class="acit-number-last-box">
+                    <div ng-repeat="datatest13 in object.test13">
+                    <li>{{datatest13.data}}</li>
+                    </div></ul>
+                    </div>
+                    
+      </section>
+
+	</div>
+
+	
+    </ion-content>
+</ion-view>

@@ -1,0 +1,41 @@
+<div class="bar bar-header bar-blue" align-title="left">
+     <button class="button button-icon ion-chevron-left" ng-click="goBack()">
+    	<!-- <i class="icon ion-chevron-left"></i> -->   
+    </button>
+    <h1 class="titleHeader">Asset Search</h1>
+</div> 
+<div class="bar bar-subheader" style="padding: 0;">
+          <label class="item-input-wrapper Active">
+          		<i class="icon ion-ios7-search placeholder-icon"></i>
+              <input type="search" placeholder="Filter By Asset Name" class="search" ng-model="letter">
+          </label>
+          <button ng-click="letter = ''"  ng-hide="!letter.length" class="d button button-icon icon ion-ios7-close-empty"></button>
+       </div> 
+<ion-view>
+   <!-- <section class="box-head">      
+          <div>
+          <label class="item-input-wrapper Active">
+          		<i class="icon ion-ios7-search placeholder-icon"></i>
+              <input type="search" placeholder="Filter By Client Name" class="search" ng-model="letter">
+          </label>
+          <button ng-click="letter = ''"  ng-hide="!letter.length" class="d button button-icon icon ion-ios7-close-empty"></button>
+       </div>  
+    </section> --> 
+    <ion-content class="product-assets page-overflow has-header has-subheader">
+		<div ng-show = "errorMsg != ''" class="text-center errorExp">
+ 			<div><img ng-src={{"./images/error.png"}} class="errorImg" /></div>
+      		<div>{{errorMsg}}</div>
+      	</div>
+        <span ng-show="letter.length"><div class="list-container">
+            <section class="asset-section">
+<!--                 <p class="header4">Accenture Foundation Platform for IBM</p> -->
+				 <a ui-sref="acit-menu.asset-details({id: asset.id})" ng-repeat="asset in recentAssets | orderBy:'Release_Date':true | filter: letter" class="home-box bg-color-blue">
+                    <p class="sek-dot1">{{asset.Asset_Name}}</p>
+                 </a>
+            </section>
+        </div></span>
+    </ion-content>
+    <div class="bar bar-footer bar-blue1 hide-on-keyboard-open">
+  		<div class="title">Copyright 2004 - 2015 Accenture. All rights reserved</div>
+	</div> 
+</ion-view>

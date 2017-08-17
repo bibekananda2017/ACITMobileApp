@@ -1,0 +1,25 @@
+<div class="bar bar-header bar-calm">
+    <button class='button button-clear ion-arrow-left-c' ng-click="goBack()"></button>
+  <h1 class="titleHeader">{{heading}}</h1>
+	 		<div ng-controller="loginCtrl">
+            	<h2 class="titleHeader"></h2>
+            	<button class='button button-clear ion-log-out' ng-click="logout()"></button>
+            </div>
+</div>
+<view title="heading">
+	
+    <content has-header="true" has-subheader="false">
+    	<div><br><br></div>
+    	<div class="list">
+            <a class="item"  ng-repeat="newsfeed in newsfeeds" href="#/acit/newsfeedlist/{{newsfeed.id}},{{heading}}">
+                <h3 class="head3  row">{{newsfeed.title}}</h3>
+                <p16 class="row">{{newsfeed.date | date :'MM/dd/yyyy'}}</p16>
+            </a>
+        </div>
+        <div ng-show = "errorMsg != ''" class="text-center errorExp">
+ 			<div><img ng-src={{"./images/error.png"}} class="errorImg" /></div>
+      		<div>{{errorMsg}}</div>
+      	</div>	
+    </content>
+
+</view>

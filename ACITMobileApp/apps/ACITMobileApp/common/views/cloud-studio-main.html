@@ -1,0 +1,81 @@
+<div class="bar bar-header bar-blue">
+	<button class="button button-icon" ng-click="toggleProjects()">
+		<i class="icon ion-navicon"></i>
+	</button>
+     <h1 class="titleHeader">Cloud Studio</h1>
+     <!-- <button class="button button-icon" ng-click="gotoHome()">
+		<i class="icon ion-navicon"></i>
+	</button>-->
+</div>   
+<ion-view>        
+
+    <ion-content class="home-page-overflow has-header cloud-pages padding">
+    <div ng-repeat="object in jsonobject">
+<div class = "aboutAppPadding4 text-center mble-view">
+       <img ng-src="images/ACIT_Cloud_logo.jpg" style="width: 100%" />
+       <p class="sek-dot1">{{object.desc4}}</p>
+         </div>
+        
+		<div class = "aboutAppPadding4 text-center tblt-view" style="padding-top: 32px !important;">
+        <img  ng-src="images/ACIT_Cloud_logo.jpg"  style="width: 100%"/>
+        <p class="sek-dot1">{{object.desc4}}</p>
+        </div>
+<div style="padding-bottom: 80px; float: left; width: 100%;">
+		<section>
+		<div class="home-box  gray-box studio-boxes" style="margin-right: 4% !important">
+                    <p >Vision</p>
+                    </div>
+        <div class="home-box  gray-box studio-boxes" style="margin-right: 0% !important">
+                    <p >Business Context & Future Trends</p>
+                    </div>            
+		 </section>
+		
+		<section>
+                     <div class="home-box bg-color-blue studio-boxes" style="margin-right: 4% !important">
+                     <a ui-sref="" class="plain-anchor">
+                    <p style="padding-bottom: 9px;">Enable Clients </p>
+                    <div ng-repeat="datalist1 in object.data1">
+                    <li>{{datalist1.data1}} </li></div>
+                   <!--  <button style="left:90%;top:-20px;color: white;" class="button button-icon ion-chevron-right"></button> -->
+                  	 </a>
+                    </div>
+                    <div class="home-box bg-color-blue studio-boxes" style="margin-right: 0% !important">
+                    <a ui-sref="acit-menu.businesscontext-detail" class="plain-anchor">
+                    <p style="padding-bottom: 9px;">Emerging Tech</p>
+                    <div ng-repeat="datalist2 in object.data2">
+                    <li>{{datalist2.data1}}</li></div>
+                    <button style="left:90%;top:-20px;color: white;" class="button button-icon ion-chevron-right"></button>
+                   </a> </div>
+            </section>
+           <section>
+		<div class="home-box  gray-box studio-boxes" style="margin-right: 4% !important">
+                    <p >Business Opportunity</p>
+                    </div>
+        <div class="home-box  gray-box studio-boxes" style="margin-right: 0% !important">
+                    <p >What studio can do for you?</p>
+                    </div>            
+		 </section>
+            <section>
+                
+                     <div class="home-box bg-color-blue studio-boxes" style="margin-right: 4% !important">
+                     <a ui-sref="" class="plain-anchor">
+                    <p style="padding-bottom: 9px;">Phases</p>
+                    <div ng-repeat="datalist3 in object.data3">
+                    <li>{{datalist3.data1}}</li></div>
+                   <!--  <button style="left:90%;top:-20px;color: white;" class="button button-icon ion-chevron-right"></button> -->
+                    </a>
+                    </div>
+                      <div class="home-box bg-color-blue studio-boxes" style="margin-right: 0% !important">
+                      <a ui-sref="" class="plain-anchor">
+                    <p style="padding-bottom: 9px;">Process</p>
+                    <div ng-repeat="datalist4 in object.data4">
+                    <li>{{datalist4.data1}}</li></div>
+                  <!--   <button style="left:90%;top:-20px;color: white;" class="button button-icon ion-chevron-right"></button> -->
+                    </a>
+                    </div>
+               
+            </section>
+   </div>
+   </div>
+    </ion-content>
+</ion-view>

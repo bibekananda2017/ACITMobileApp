@@ -1,0 +1,52 @@
+<!-- <ion-header-bar align-title="left" class="bar-blue">
+	<button class="button button-icon" ng-click="toggleProjects()">
+		<i class="icon ion-navicon"></i>
+	</button>
+	<h1 class="titleHeader">Client Activity</h1>
+</ion-header-bar> -->
+<div class="bar bar-header bar-blue" align-title="left">
+	<button class="button button-icon" ng-click="toggleProjects()">
+		<i class="icon ion-navicon"></i>
+	</button>
+     <h1 class="titleHeader">Client Activity</h1>
+</div>
+<div class="bar bar-subheader" style="padding: 0;">
+          <label class="item-input-wrapper Active">
+          		<i class="icon ion-ios7-search placeholder-icon"></i>
+              <input type="search" placeholder="Filter By Client Name" class="search" ng-model="letter.$">
+          </label>
+          <button ng-click="letter = ''"  ng-hide="!letter.length" class="d button button-icon icon ion-ios7-close-empty"></button>
+       </div> 
+<ion-view>
+   <!-- <section class="box-head">      
+          <div>
+          <label class="item-input-wrapper Active">
+          		<i class="icon ion-ios7-search placeholder-icon"></i>
+              <input type="search" placeholder="Filter By Client Name" class="search" ng-model="letter">
+          </label>
+          <button ng-click="letter = ''"  ng-hide="!letter.length" class="d button button-icon icon ion-ios7-close-empty"></button>
+       </div>  
+    </section> --> 
+    <ion-content class="product-assets page-overflow has-header has-subheader">
+    	<div ng-show = "errorMsg != ''" class="text-center errorExp">
+ 			<div><img ng-src={{"./images/error.png"}} class="errorImg" /></div>
+      		<div>{{errorMsg}}</div>
+      	</div>
+        <div class="list-container">
+             <h3 class="section-head con7">Current Week</h3>
+            <section class="client-activity list con8">
+            <a class="item evnt-lst" ng-repeat="cactivity in clientActivities | filter: letter" href="#/acit/menu/clientactivities/{{cactivity.ID}}" >
+            	<p class="item-p" style="width: 100%">{{cactivity.Client}}</p>
+				<p class="little-text ion-document-text" style="width: 100%">&nbsp;{{cactivity.Project|custLimit: 37}}</p>
+				<div class="row">
+        			<div class="col col-50 text-left ion-android-contact little-text">&nbsp;{{cactivity.Contact_Name}}</div>
+					<div class="col col-45 icon ion-android-calendar text-right little-text">&nbsp;{{cactivity.Date_Last_Contacted | date:'MM/dd/yyyy'}}</div>
+				</div>
+			</a>
+            </section>
+        </div>
+    </ion-content>
+    <!--<div class="bar bar-footer bar-blue1 hide-on-keyboard-open">
+  		<div class="title">Copyright 2004 - 2014 Accenture. All rights reserved</div>
+	</div>--> 
+</ion-view>

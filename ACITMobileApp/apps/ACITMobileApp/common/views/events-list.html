@@ -1,0 +1,46 @@
+<!-- <ion-header-bar align-title="left" class="bar-blue">
+            <button class="button button-icon" ng-click="toggleProjects()">
+                <i class="icon ion-navicon"></i>
+            </button>
+           <h1 class="titleHeader">Events</h1> 
+</ion-header-bar> -->
+<div class="bar bar-header bar-blue">
+	<button class="button button-icon" ng-click="toggleProjects()">
+		<i class="icon ion-navicon"></i>
+	</button>
+     <h1 class="titleHeader">Events</h1>
+</div>   
+<ion-view>
+    	
+		<div ng-show = "errorMsg != ''" class="text-center errorExp">
+ 			<div><img ng-src={{"./images/error.png"}} class="errorImg" /></div>
+      		<div>{{errorMsg}}</div>
+      	</div>
+    <ion-content class="list-content-block has-header page-overflow">
+	    <div class="list-container">
+	            <section class="client-activity list con9 lst-event">
+	            	
+	                <a class="item" ng-repeat="event in events" href="#/acit/menu/events/{{event.id}}">
+					<div class="row">
+					<div class = "col col-25">
+					<div class="date-events">
+					<li class="con1"><div class="con2">
+					<h2 class="con3">{{event.date | date: 'EEE'}}</h2>
+					<h2 class="con4">{{event.date | date: 'dd'}}</h2>
+					<h4>{{event.date | date: 'MMM'}}, {{event.date | date: 'yy'}}</h4>
+					</div>
+					</div>
+					</div>
+					<div class = "col col-evnt-lst con5">
+						<p class="item-p row" style="width: 100%">{{event.event}}</p>
+						<div class="row">
+                		<p class="text-left ion-clock little-text col col-50">&nbsp;{{event.eventStrDate | date:'h:mma'}} to {{event.eventEndDate | date:'h:mma'}}</p>
+						<p class="icon ion-ios7-location-outline text-right little-text col">&nbsp;{{event.location}}</p>
+						</div>
+					</div>
+					</div>
+	            	</a> 
+	            </section>
+	        </div>
+    </ion-content>
+</ion-view>

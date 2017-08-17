@@ -1,0 +1,64 @@
+<div class="bar bar-header bar-blue">
+	<button class="button button-icon" ng-click="toggleProjects()">
+		<i class="icon ion-navicon"></i>
+	</button>
+     <h1 class="titleHeader">Business Partnership</h1>
+     <!-- <button class="button button-icon" ng-click="gotoHome()">
+		<i class="icon ion-navicon"></i>
+	</button>-->
+</div>   
+<ion-view>        
+
+    <ion-content class="home-page-overflow has-header padding cloud-pages">
+    <div ng-repeat="object in jsonobject">
+<div>
+        <p class="sek-dot3">{{object.test1}}<p>
+</div>
+		<div class = "text-center mble-view">
+        <p><img ng-src="images/mobile_Business.png" style="width: 100%"/></p>
+         </div>
+		<div class = "text-center tblt-view mtops15s">
+        <p><img  ng-src="images/ipad_Business.png"  style="width: 100%"/></p>
+        </div>
+        
+        
+        
+<div class="mtops15s">
+		<section>
+		<div class="home-box  gray-box studio-boxes" style="margin-right: 4% !important">
+                    <p >ACIT Offerings</p>
+                    </div>
+        <div class="home-box  gray-box studio-boxes" style="margin-right: 0% !important">
+                    <p >ACIT in Numbers</p>
+                    </div>            
+		 </section>
+		
+		<section>
+                     <div class="home-box bg-color-blue studio-boxes" style="margin-right: 4% !important">
+                     <a ui-sref="" class="plain-anchor">
+                    <p style="padding-bottom: 9px;">Trends</p>
+                    <div ng-repeat="datatest2 in object.test2">
+                    <li>{{datatest2.data1}} </li></div>
+                   <!--  <button style="left:90%;top:-20px;color: white;" class="button button-icon ion-chevron-right"></button> -->
+                  	 </a>
+                    </div>
+                    <div class="home-box bg-color-blue studio-boxes" style="margin-right: 0% !important">
+                    <a ui-sref="acit-menu.acit-number-detail" class="plain-anchor">
+                    <p style="padding-bottom: 9px;">35,000+</p>
+                    <p>{{object.test3}}</p>
+                    <button style="left:90%;top:-20px;color: white;" class="button button-icon ion-chevron-right"></button>
+                   </a> </div>
+            </section>
+   </div>
+            <br class="clr" />
+            <section class="clr asset-section mtops15s">
+            <div class="home-box sek-dot3 gray-box" style="width:100%;height: 250px !important;">
+              <p class="bt-mrgn">Leaders Message</p>
+               <p class="small-font">{{object.test4}}</p>
+                <br class="clr" />
+               <p class="small-font">{{object.test5}}</p>
+            </div>
+            </section>
+            </div>
+    </ion-content>
+</ion-view>

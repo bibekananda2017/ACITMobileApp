@@ -1,0 +1,45 @@
+<div class="bar bar-header bar-blue">
+	<button class="button button-icon ion-chevron-left" ng-click="goBack()">
+	</button>
+     <h1 class="titleHeader">Business Context & Future Trends </h1>
+     <!-- <button class="button button-icon" ng-click="gotoHome()">
+		<i class="icon ion-navicon"></i>
+	</button>-->
+</div>   
+<ion-view>        
+
+    <ion-content class="home-page-overflow has-header padding cloud-pages">
+    <div ng-repeat="object in jsonobject" class="padding pad-bot40">
+<div>
+<ul class="fut-trendsUL">
+<li>{{object.decs1}}</li>
+<li>{{object.decs2}} </li>
+<li>{{object.decs3}}</li>
+</ul>
+</div>
+		<div class = "aboutAppPadding4 text-center mble-view">
+        <img ng-src="images/Business_Context_Future_Trends.jpg" />
+         </div>
+		<div class = "aboutAppPadding4 text-center tblt-view" style="padding-top: 2px !important;">
+        <img  ng-src="images/Business_Context_Future_Trends_Ipad.jpeg"/>
+        </div>
+        <br class="clr" />
+        <div>
+            <div class="home-box bg-color-blue studio-boxes" style="margin-right: 4% !important;overflow: scroll;">
+             <p style="margin-bottom: 4px;"><b>Liquid</b></p>
+             <p style="overflow: scroll;">{{object.decs5}}</p>
+            </div>
+            <div class="home-box bg-color-blue studio-boxes" style="margin-right: 0% !important;overflow: scroll;">
+             <p style="margin-bottom: 4px;"><b>Intelligent</b></p>
+             <p style="overflow: scroll;">{{object.decs6}}</p>
+            </div>
+            <br class="clr" />
+            <br class="clr" />
+            <div class="bg-blues" style="padding: 7px;">
+              <p style="margin-bottom: 4px;" class="small-tit"><b>Connected<b></p>
+             <p>{{object.decs7}}</p>
+            </div>
+        </div>
+        </div>
+    </ion-content>
+</ion-view>

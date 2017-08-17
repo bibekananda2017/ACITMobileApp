@@ -1,0 +1,12 @@
+<ion-modal-view style="width: 80%; top: 10%; left: 8%; right: 8%; background: transparent;">
+    <ion-content style="background: transparent; height: {{overlayHeight}};" ng-click="modal.hide()" scroll="true">
+
+
+        <div class="dropdown-assets">
+            <ul>
+                <li ng-model="productItem" ng-repeat="product in products" ng-click="selectProduct(product.Product_Id);modal.hide();">{{product.Product_Name}}</li>
+            </ul>
+        </div>
+
+    </ion-content>
+</ion-modal-view>

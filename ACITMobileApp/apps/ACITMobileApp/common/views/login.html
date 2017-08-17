@@ -1,0 +1,55 @@
+
+<ion-view title="login-page">
+    <ion-content scroll="false">
+        <div class="page-overflow login-container">
+
+            <div class="login-header">
+                <h3>ACIT</h3>
+                <p>Welcome to</p>
+                <p>The Accenture Center for <br class="tblt-view" />IBM Technologies</p>
+				<br class="tblt-view" />
+				<i class="tblt-view add-slogan">Smarter Selling. Smarter Delivery.</i>
+            </div>
+
+            <br class="clr" />
+            <div id="loginForm">
+                <div>
+                    <label>User Name</label>
+                    <input id="uid" type="text" ng-model="uid" placeholder="Enterprise ID" />
+                </div>
+                <div class="marginTop">
+                    <label for="pswd">Password</label>
+                    <br class="clr" />
+                     <input id="pswd" class="col-99" type="password" placeholder="Password" ng-model="pswd" ng-trim="false" />
+                    <!-- <div class="row" ng-show="!showText">
+                        <input id="pswd" class="col-99" type="password" placeholder="Password" ng-model="pswd" ng-trim="false" />
+                        <i ng-click="showText = !showText " class="ion-eye col mble-view" text="Show Password"></i>
+                    </div>
+                    <div class="row mg-top0" ng-show="showText">
+                        <input id="pswd" class="col-99" type="text" ng-model="pswd" ng-trim="false" placeholder="Password" />
+                        <i ng-click="showText = !showText " class="ion-eye-disabled col mble-view" text="Show Password"></i>
+                    </div> -->
+                </div>
+                <br class="clr" />
+                <div class="mble-view" style="float: right">
+                <input type="checkbox" class="saveUser" ng-click="chkme('saveUser')">&nbsp;Save Password
+                    <br class="clr" />
+                </div>
+            
+
+                <div class="row">
+                    <button class="button button-block button-blue1 login-button col col-33 col-offset-33 mble-view" ng-click="submitLogin1(uid,pswd)">Sign In</button>
+                    <button class="button button-block button-blue1 login-button col col-33 tblt-view" ng-click="submitLogin1(uid,pswd)">Sign In</button>
+                    <div class="col col-offset-33 col-33 tblt-view"><input type="checkbox" style="margin-bottom: 20px;" ng-click="showText = !showText">&nbsp;Show Password
+                    <br /><input type="checkbox" class="saveUser1" ng-click="chkme('saveUser1')">&nbsp;Save Password
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <br class="clr" />
+    </ion-content>
+</ion-view>
+<div class="bar bar-footer bar-blue1 hide-on-keyboard-open">
+    <div class="title">Copyright 2004 - {{currentYear}} Accenture. All rights reserved</div>
+</div>

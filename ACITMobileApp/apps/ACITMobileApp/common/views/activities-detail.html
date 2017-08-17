@@ -1,0 +1,36 @@
+<!-- <ion-header-bar align-title="left" class="bar-blue">
+	<button class="button button-icon" ng-click="goBack()">
+		<i class="icon ion-chevron-left"></i>
+	</button>
+	<h1 class="titleHeader">Announcement Details</h1> 
+</ion-header-bar>
+ -->
+<div class="bar bar-header bar-blue" align-title="left">
+     <button class="button button-icon" ng-click="goBack()">
+    	<i class="icon ion-chevron-left"></i>   
+    </button>
+    <h1 class="titleHeader">Announcement Details</h1>
+</div> 
+
+<ion-view title="activity">
+	<ion-content class="page-overflow has-header">
+		<div ng-show = "errorMsg != ''" class="text-center errorExp">
+ 			<div><img ng-src={{"./images/error.png"}} class="errorImg" /></div>
+      		<div>{{errorMsg}}</div>
+      	</div>
+        <div class="page-container">
+            <h3 class="section-head">{{activity}}</h3>
+            <div class="row margin-top10">
+            	<div class="col-50 icon ion-ios7-calendar-outline">&nbsp;&nbsp;{{date | date:'mediumDate'}}</div>
+            	<!-- <div class="col icon ion-clock text-right">&nbsp;&nbsp;{{expiry | date:'mediumDate'}}</div>-->
+            </div>
+            <section class="clr asset-section"  style="margin-top: 20px;">
+                 <div id="normal" clas="con10" ng-bind-html="details"/>
+            </section>
+            </div>
+            <br class="clr" />
+    </ion-content>
+</ion-view>
+
+     
+

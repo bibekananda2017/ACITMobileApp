@@ -1,0 +1,71 @@
+
+<ion-side-menus>
+    <ion-side-menu-content>
+        <!-- <ion-header-bar align-title="left" class="bar-blue">
+            <button class="button button-icon" ng-click="toggleProjects()">
+                <i class="icon ion-navicon"></i>
+            </button>
+            
+         <h1 class="title">Smarter Selling. Smarter Delivery</h1> 
+        </ion-header-bar> -->
+        <ion-nav-view name="menuContent"></ion-nav-view>
+        <br class="clr" />
+        <div class="bar bar-footer bar-blue1 hide-on-keyboard-open">
+  			<div class="title">Copyright 2004 - {{currentYear}} Accenture. All rights reserved</div>
+		</div>
+    </ion-side-menu-content>
+    <ion-side-menu side="left" width="leftMenuWidth">
+       <ion-header-bar class="bar-darkGrey">
+        	<div style="width: 100%">
+        		<div class="row">
+        			<img ng-src="images/default-user-72dpi.png"/ height="42" width="42" class="col-30 mble-view" />
+        			<img ng-src="images/default-user-72dpi.png"/ class="col-30 tblt-view" />
+        			<div class="col col-70 col-offset-70 mrginLft3">
+			           <p>{{entrId}}</p>
+			           <p2 class="little-text">{{entrId}}@accenture.com</p2>
+					</div>
+        		</div>
+        		<div class="row margin-top5">
+        			<button class="button button-small button-positive col col-33 col-offset-67 mble-view" ng-click="logout()">Logout</button>
+        			<button class="button button-positive tblt-logout-button col col-33 col-offset-67 tblt-view" ng-click="logout()">Logout</button>
+        		</div>
+        	</div>
+        </ion-header-bar>
+
+        <ion-content style="background-color: #383838;" class="has-header tblt-adjust">
+            <!-- <ul class="listHomeList">  -->
+             <ul>
+                <a href="#/acit/menu/home" class="itemGrey item-icon-left" menu-toggle="left"><i
+		class="icon ion-home"></i><div class="test1">Home</div></a>
+                <a href="#/acit/menu/newsfeedhome" class="itemGrey item-icon-left" menu-toggle="left"><i
+		class="icon ion-card"></i><div class="test1">News</div></a>
+		<!-- <a  href="#/acit/menu/client-activites" class="itemGrey item-icon-left" menu-toggle="left"><i-->
+               <a acit-role="clientactivity" ng-show="test"  class="itemGrey item-icon-left" href="#/acit/menu/client-activites" menu-toggle="left"><i
+      	class="icon ion-clipboard"></i><div class="test1">Client Activity</div></a>
+                <a href="#/acit/menu/assets" class="itemGrey item-icon-left" menu-toggle="left"><i
+		class="icon ion-ios7-copy"></i><div class="test1">Assets</div></a>
+                <a href="#/acit/menu/activities" class="itemGrey item-icon-left" menu-toggle="left"><i
+		class="icon ion-android-volume"></i><div class="test1">Announcements</div></a>
+                <a  href="#/acit/menu/events" class="itemGrey item-icon-left" menu-toggle="left"><i
+		class="icon ion-android-note"></i><div class="test1">Events</div></a>
+		<a  href="#/acit/menu/messages" class="itemGrey item-icon-left" menu-toggle="left"><i
+		class="icon ion-chatboxes"></i><div class="test1">Message Board</div></a>
+				<a  href="#/acit/menu/subscription" class="itemGrey item-icon-left" menu-toggle="left"><i
+		class="icon ion-social-rss"></i><div class="test1">Subscription</div></a>
+		<a  href="#/acit/menu/cloudStudio" class="itemGrey item-icon-left clr" menu-toggle="left"><img class="menu-custom-icons" alt="" src="images/icon_cloud_studio.png"><div class="test1">Cloud Studio</div></a>
+<a  href="#/acit/menu/businessPartnership" class="itemGrey item-icon-left clr" menu-toggle="left"><img class="menu-custom-icons" alt="" src="images/icon_business_partnership.png"><div class="test1">Business Partnership</div></a>
+		 		<!--<a  href="mailto:prabhu.sekar@accenture.com?Subject=Acit_test" class="itemGrey item-icon-left"><i
+		class="icon ion-email"></i><div class="test1">Contact us</div></a>-->
+				 <a  href="#/acit/menu/aboutapp" class="itemGrey item-icon-left" menu-toggle="left"><i
+		class="icon ion-laptop"></i><div class="test1">About this App</div></a>
+				<a  ng-controller="emailController" ng-click="emailContactUs()" class="itemGrey item-icon-left"><i
+		class="icon ion-email"></i><div class="test1">acit-ww@accenture.com</div></a>
+				
+		<!-- <a  href="#/acit/menu/contacts" class="itemGrey item-icon-left" menu-toggle="left"><i
+		class="icon ion-person"></i><div class="test1">Contacts</div></a>-->
+               <!--  <a  class="itemGrey item-icon-left"><i
+		class="icon ion-gear-a"></i><div class="test1">Settings</div></a>-->
+            </ul>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

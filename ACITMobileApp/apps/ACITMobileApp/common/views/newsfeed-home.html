@@ -1,0 +1,65 @@
+<!--  <ion-header-bar align-title="left" class="bar-blue">
+            <button class="button button-icon" ng-click="toggleProjects()">
+                <i class="icon ion-navicon"></i>
+            </button>
+           <h1 class="titleHeader">News</h1> 
+</ion-header-bar>  -->
+
+<div class="bar bar-header bar-blue">
+	<button class="button button-icon" ng-click="toggleProjects()">
+		<i class="icon ion-navicon"></i>
+	</button>
+     <h1 class="titleHeader">News</h1>
+</div>   
+ 
+ <ion-tabs class="tabs-striped tabs-top tabs-background-cementGrey tabs-skyBlue news-home-tab">
+  	
+		
+    <ion-tab title="Accenture News">
+    	<ion-nav-view name="home-tab">
+        	<ion-view>
+        		<ion-content class="page-overflow">
+        			<div class="list-container">
+					<div class="list">
+            			<a class="item"  ng-repeat="newsfeed in newsfeeds" href="#/acit/newsfeedlist/{{newsfeed.id}},{{'Accenture NewsFeed'}}">
+                			<p class="head3 row item-p">{{newsfeed.title}}</p>
+                			<p class="row little-text">{{newsfeed.date | date :'mediumDate'}}, {{newsfeed.date | date : 'shortTime'}}</p>
+            			</a>
+        			</div> 
+        			<div ng-show = "errorMsg != ''" class="text-center errorExp">
+			 			<div><img ng-src={{"./images/error.png"}} class="errorImg" /></div>
+			      		<div>{{errorMsg}}</div>
+			      	</div>
+					</div>
+    			</ion-content>
+    		</ion-view>
+    	</ion-nav-view>
+     </ion-tab>
+        
+     <ion-tab title="IBM News">
+     	<ion-nav-view name="about-tab">
+        	<ion-view>
+        		<ion-content>
+        			<div class="list-container">
+        			<div class= "iconDiv" ng-show="iconLoad">
+        				<i class="icon ion-loading-b"></i>
+        			</div>
+        			<div class="list">
+        			
+			            <a class="item"  ng-repeat="newsfeed in IBMnewsfeeds" href="#/acit/newsfeedlist/{{newsfeed.id}},{{'IBM NewsFeed'}}">
+			                <p class="head3 row item-p">{{newsfeed.title}}</p>
+			                <p class="row little-text">{{newsfeed.date | date :'mediumDate'}}, {{newsfeed.date | date : 'shortTime'}}</p>
+			            </a>
+        			</div> 
+			        <div ng-show = "errorMsg != ''" class="text-center errorExp">
+			 			<div><img ng-src={{"./images/error.png"}} class="errorImg" /></div>
+			      		<div>{{errorMsg}}</div>
+			      	</div></div>
+    			</ion-content>
+    		</ion-view>
+          </ion-nav-view>
+      </ion-tab>
+ </ion-tabs>
+
+
+  
